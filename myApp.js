@@ -9,10 +9,6 @@ const personSchema = new mongoose.Schema({
     required: true
   },
   age: Number,
-  country: {
-    type: String,
-    default: 'Denmark'
-  },
   favoriteFoods: {
     type: [String]
   }

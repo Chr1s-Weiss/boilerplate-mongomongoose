@@ -12,6 +12,9 @@ const personSchema = new mongoose.Schema({
   country: {
     type: String,
     default: 'Denmark'
+  },
+  favoriteFoods: {
+    type: String
   }
 });
 

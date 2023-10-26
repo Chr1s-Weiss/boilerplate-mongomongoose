@@ -4,14 +4,9 @@ mongoose.connect(process.env.MONGO_URI);
 
 const Schema = mongoose.Schema;
 const personSchema = new Schema({
-  name:{
-    type: String,
-    required: true
-  },
+  name: { type: String, required: true },
   age: Number,
-  favoriteFoods: {
-    type: [String]
-  }
+  favoriteFoods: [String]
 });
 
 const Person = mongoose.model("Person", personSchema);

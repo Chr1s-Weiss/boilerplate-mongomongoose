@@ -20,15 +20,14 @@ const createAndSavePerson = function(done) {
   });
 };
 
+const arrayOfPeople = [
+  { name: "Frank", age: 74, favoriteFoods: ["eggs", "fish", "fresh fruit"] },
+  { name: "John", age: 34, favoriteFoods: ["eggs", "fish", "fresh fruit"] },
+  { name: "Sally", age: 24, favoriteFoods: ["eggs", "fish", "fresh fruit"] }
+]
+
 const createManyPeople = (arrayOfPeople, done) => {
   Person.create(arrayOfPeople, function(err, people) {
-    arrayOfPeople.forEach(person => {
-      let newPerson = new Person(person);
-      newPerson.save(function(err, data) {
-        if (err) return console.error(err);
-        done(null, data)
-      });
-    });
     if (err) return console.log(err);
     done(null, people);
   })
